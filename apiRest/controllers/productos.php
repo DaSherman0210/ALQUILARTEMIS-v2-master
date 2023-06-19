@@ -37,7 +37,7 @@ switch ($_GET['op']) {
                     $producto->insert_producto($nombre, $stock_inicial, $cantidad_ingresos, $cantidad_salidas, $fecha_inventario, $tipo_operacion);
                     echo "<script>alert('El producto fue agregado correctamente.'); document.location='producto'</script>";
                 }
-                header("Location: http://localhost/SkylAb-142/ALQUILARTEMIS-v2-master/alquilartemis/producto");
+                header("Location: http://localhost/SkylAb-108/ALQUILARTEMIS-v2-master/alquilartemis/producto");
             } else {
                 echo "Faltan datos en el formulario.";
             }
@@ -53,7 +53,7 @@ switch ($_GET['op']) {
                     // El producto existe, eliminarlo
                     $producto -> delete_producto($id_producto);
                     echo "<script>alert('El producto fue eliminado correctamente.');</script>";
-                    header("Location: http://localhost/SkylAb-142/ALQUILARTEMIS-v2-master/alquilartemis/producto");
+                    header("Location: http://localhost/SkylAb-108/ALQUILARTEMIS-v2-master/alquilartemis/producto");
                 }else{
                     // El producto no existe, mostrar mensaje de error
                     echo "<script>alert('El producto no existe.');</script>";
@@ -85,7 +85,7 @@ switch ($_GET['op']) {
                     $updated = $producto -> update_producto($id_producto, $nombre, $stock_inicial, $cantidad_ingresos, $cantidad_salidas, $fecha_inventario, $tipo_operacion);
                     if($updated){
                         echo json_encode(array("message" => "Producto actualizado correctamente."));
-                        header("Location: http://localhost/SkylAb-142/ALQUILARTEMIS-v2-master/alquilartemis/producto");
+                        header("Location: http://localhost/SkylAb-108/ALQUILARTEMIS-v2-master/alquilartemis/producto");
                     }else{
                         echo json_encode(array("error" => "Error al actualizar cliente."));
                     }

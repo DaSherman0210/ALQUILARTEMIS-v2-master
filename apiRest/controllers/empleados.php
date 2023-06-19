@@ -46,7 +46,7 @@ switch ($_GET['op']) {
                 if($existingEmpleado){
                     $empleado -> delete_empleado($id_empleado);
                     echo "<script>alert('El empleado fue eliminado correctamente.')</script>";
-                    header("Location: http://localhost/SkylAb-142/ALQUILARTEMIS-v2-master/alquilartemis/empleados");
+                    header("Location: http://localhost/SkylAb-108/ALQUILARTEMIS-v2-master/alquilartemis/empleados");
                 }else{
                     echo "<script>alert('El empleado no existe.');document.location='empleados'</script>";
                 }
@@ -66,7 +66,7 @@ switch ($_GET['op']) {
                     $updated = $empleado -> update_empleado($id_empleado, $nombre, $direccion, $telefono, $email);
                     if($updated){
                         echo json_encode(array("message" => "Empleado actualizado correctamente."));
-                        header("Location: http://localhost/SkylAb-142/ALQUILARTEMIS-v2-master/alquilartemis/empleados");
+                        header("Location: http://localhost/SkylAb-108/ALQUILARTEMIS-v2-master/alquilartemis/empleados");
                     }else{
                         echo json_encode(array("error" => "Error al actualizar empleado"));
                     }

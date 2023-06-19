@@ -3,7 +3,7 @@ ini_set("display_errors", 1);
 ini_set("display_startup_errors", 1);
 error_reporting(E_ALL);
 
-$url = "http://localhost/SkylAb-142/ALQUILARTEMIS-v2-master/apiRest/controllers/empleados.php?op=GetAll";
+$url = "http://localhost/SkylAb-108/ALQUILARTEMIS-v2-master/apiRest/controllers/empleados.php?op=GetAll";
 // Curl es como el fetch() en Javascript (para consumir APIs)
 $curl = curl_init();
 curl_setopt($curl, CURLOPT_URL, $url);

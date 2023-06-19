@@ -1,7 +1,7 @@
 <!-- /.card -->
 <?php
 // Obtener datos de la tabla facturas
-$url = "http://localhost/SkylAb-142/ALQUILARTEMIS-v2-master/apiRest/controllers/facturas.php?op=GetAll";
+$url = "http://localhost/SkylAb-108/ALQUILARTEMIS-v2-master/apiRest/controllers/facturas.php?op=GetAll";
 $curl = curl_init();
 curl_setopt($curl, CURLOPT_URL, $url);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
@@ -11,7 +11,7 @@ print_r($output);
 echo "</pre>"; */
 // Obtener datos de los clientes
 $clientes = array();
-$urlClientes = "http://localhost/SkylAb-142/ALQUILARTEMIS-v2-master/apiRest/controllers/clientes.php?op=GetAll";
+$urlClientes = "http://localhost/SkylAb-108/ALQUILARTEMIS-v2-master/apiRest/controllers/clientes.php?op=GetAll";
 $curlClientes = curl_init();
 curl_setopt($curlClientes, CURLOPT_URL, $urlClientes);
 curl_setopt($curlClientes, CURLOPT_RETURNTRANSFER, 1);
@@ -23,7 +23,7 @@ foreach ($outputClientes as $index => $cliente) {
 
 // Obtener datos de los empleados
 $empleados = array();
-$urlEmpleados = "http://localhost/SkylAb-142/ALQUILARTEMIS-v2-master/apiRest/controllers/empleados.php?op=GetAll";
+$urlEmpleados = "http://localhost/SkylAb-108/ALQUILARTEMIS-v2-master/apiRest/controllers/empleados.php?op=GetAll";
 $curlEmpleados = curl_init();
 curl_setopt($curlEmpleados, CURLOPT_URL, $urlEmpleados);
 curl_setopt($curlEmpleados, CURLOPT_RETURNTRANSFER, 1);
@@ -59,7 +59,7 @@ foreach ($outputEmpleados as $index => $empleado) {
           $clienteNombre = isset($clientes[$out->id_cliente]) ? $clientes[$out->id_cliente] : 'Desconocido';
           $empleadoNombre = isset($empleados[$out->id_empleado]) ? $empleados[$out->id_empleado] : 'Desconocido';
 
-          echo "<pre>";
+          /* echo "<pre>";
           print_r($clienteNombre);
           echo "</pre>";
 
@@ -68,7 +68,7 @@ foreach ($outputEmpleados as $index => $empleado) {
           print_r($empleadoNombre);
           echo "</pre>";
 
-          echo "----------------";
+          echo "----------------"; */
           
         ?>
         <tr>
@@ -83,8 +83,12 @@ foreach ($outputEmpleados as $index => $empleado) {
           <td>
               <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal4_<?php echo $out->id_salida; ?>">UPDATE</button>
           </td>
-          <td><a href="http://localhost/SkylAb-142/ALQUILARTEMIS-v2-master/apiRest/controllers/facturas.php?op=delete&id_salida=<?php echo $out -> id_salida; ?>" onclick="return confirm('¿Desea eliminar esta factura?')" class="btn btn-danger">DELETE</a></td>
+          <td><a href="http://localhost/SkylAb-108/ALQUILARTEMIS-v2-master/apiRest/controllers/facturas.php?op=delete&id_salida=<?php echo $out -> id_salida; ?>" onclick="return confirm('¿Desea eliminar esta factura?')" class="btn btn-danger">DELETE</a></td>
         </tr>
+
+        <?php } ?>
+
+
         <!-- Modal for update -->
         <div class="modal fade" id="exampleModal4_<?php echo $out->id_salida; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -94,7 +98,7 @@ foreach ($outputEmpleados as $index => $empleado) {
           <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
         </div>
         <div class="modal-body">
-        <form action="http://localhost/SkylAb-142/ALQUILARTEMIS-v2-master/apiRest/controllers/facturas.php?op=update&id_salida=<?php echo $out -> id_salida; ?>" method="post">
+        <form action="http://localhost/SkylAb-108/ALQUILARTEMIS-v2-master/apiRest/controllers/facturas.php?op=update&id_salida=<?php echo $out -> id_salida; ?>" method="post">
           <div class="mb-3">
               <label for="id_cliente" class="form-label">Cliente</label>
              <select class="form-select" name="id_cliente" id="id_cliente" aria-label="Default select example">
@@ -153,7 +157,7 @@ foreach ($outputEmpleados as $index => $empleado) {
         </div>
       </div>
     </div>
-        <?php } ?>
+        
       </tbody>
     </table>
   </div>

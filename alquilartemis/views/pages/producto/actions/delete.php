@@ -8,7 +8,7 @@ if (isset($_GET['id_producto'])) {
     $id_producto = $_GET['id_producto'];
 
     // URL de la API con el parámetro id_producto
-    $url = "http://localhost/SkylAb-142/ALQUILARTEMIS-v2-master/apiRest/controllers/productos.php?op=delete&id_producto=" . $id_producto;
+    $url = "http://localhost/SkylAb-108/ALQUILARTEMIS-v2-master/apiRest/controllers/productos.php?op=delete&id_producto=" . $id_producto;
 
     // Realizar la solicitud DELETE utilizando cURL
     $ch = curl_init($url);

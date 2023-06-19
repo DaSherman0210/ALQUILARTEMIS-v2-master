@@ -3,7 +3,7 @@ ini_set("display_errors", 1);
 ini_set("display_startup_errors", 1);
 error_reporting(E_ALL);
 
-$url = "http://localhost/SkylAb-142/ALQUILARTEMIS-v2-master/apiRest/controllers/clientes.php?op=GetAll";
+$url = "http://localhost/SkylAb-108/ALQUILARTEMIS-v2-master/apiRest/controllers/clientes.php?op=GetAll";
 $curl = curl_init();
 curl_setopt($curl, CURLOPT_URL, $url);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);

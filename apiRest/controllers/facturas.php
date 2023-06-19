@@ -37,7 +37,7 @@ switch ($_GET['op']) {
                 if( $existingSalida){
                     $salida -> delete_salida($id_salida);
                     echo "<script>alert('La factura fue eliminada correctamente.');</script>";
-                    header("Location: http://localhost/SkylAb-142/ALQUILARTEMIS-v2-master/alquilartemis/facturas");
+                    header("Location: http://localhost/SkylAb-108/ALQUILARTEMIS-v2-master/alquilartemis/facturas");
                 }else{
                     echo "<script>alert('La factura no existe.');</script>";
                 }
@@ -60,7 +60,7 @@ switch ($_GET['op']) {
                     $updated = $salida -> update_salida($id_salida, $id_cliente, $id_empleado, $fecha_salida, $hora_salida, $subtotal_peso, $placa_transporte, $observaciones);
                     if($updated){
                         echo json_encode(array("message" => "Factura actualizada correctamente."));
-                        header("Location: http://localhost/SkylAb-142/ALQUILARTEMIS-v2-master/alquilartemis/facturas");
+                        header("Location: http://localhost/SkylAb-108/ALQUILARTEMIS-v2-master/alquilartemis/facturas");
                     }else{
                         echo json_encode(array("error" => "Error al actualizar factura."));
                     }

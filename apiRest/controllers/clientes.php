@@ -3,7 +3,7 @@ header('Content-Type: application/json');
 require_once("../config/Conectar.php");
 require_once("../models/Clientes.php");
 
-$ruta = "http://localhost/SkylAb-142/ALQUILARTEMIS-v2-master/alquilartemis/clientes";
+$ruta = "http://localhost/SkylAb-108/ALQUILARTEMIS-v2-master/alquilartemis/clientes";
 
 $cliente = new Clientes();
 
@@ -51,7 +51,7 @@ switch ($_GET['op']) {
             if ($existingCliente) {
                 $cliente->delete_cliente($id_cliente);
                 echo json_encode(array("message" => "El cliente fue eliminado correctamente."));
-                header("Location: http://localhost/SkylAb-142/ALQUILARTEMIS-v2-master/alquilartemis/clientes");
+                header("Location: http://localhost/SkylAb-108/ALQUILARTEMIS-v2-master/alquilartemis/clientes");
             } else {
                 echo json_encode(array("error" => "El cliente no existe."));
             }

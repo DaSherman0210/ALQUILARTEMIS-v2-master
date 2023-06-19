@@ -1,4 +1,4 @@
--- Active: 1685617745262@@127.0.0.1@3306@alquilartemis
+-- Active: 1685751278085@@127.0.0.1@3306@alquilartemis
 CREATE DATABASE alquilartemis;
   DEFAULT CHARACTER SET = 'utf8mb4';
 
